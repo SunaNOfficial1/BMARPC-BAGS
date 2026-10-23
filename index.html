@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMARPC Bags | Order Online</title>
+  <meta name="description" content="Order your BMARPC bag online for ৳600. Easy ordering and bKash payment.">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 20px; }
+    body { font-family: Arial, sans-serif; background: #f4f6f8; color: #222; line-height: 1.6; }
+    header { background: #102a43; color: white; text-align: center; padding: 24px 15px; }
+    header h1 { font-size: 30px; letter-spacing: 1px; }
+    header p { color: #d9e8f5; margin-top: 5px; }
+    .container { max-width: 600px; margin: 25px auto; padding: 0 15px; }
+    .card { background: white; padding: 22px; margin-bottom: 22px; border-radius: 14px; box-shadow: 0 4px 18px rgba(0,0,0,0.07); }
+    .product-image { display: block; width: 100%; max-height: 480px; object-fit: contain; border-radius: 10px; background: #fff; }
+    .image-error { display: none; padding: 25px; background: #fff0f0; color: #a12626; text-align: center; border-radius: 8px; }
+    .product-title { font-size: 25px; margin-top: 18px; text-align: center; }
+    .price { text-align: center; font-size: 32px; font-weight: bold; color: #087443; margin: 8px 0 20px; }
+    .btn { display: block; width: 100%; padding: 14px; border: none; border-radius: 8px; text-decoration: none; text-align: center; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 12px; }
+    .order-btn { background: #1264d8; color: white; }
+    .whatsapp-btn { background: #20bd62; color: white; }
+    .call-btn { background: #102a43; color: white; }
+    .bkash-btn { background: #e2136e; color: white; }
+    .btn:hover { opacity: 0.9; }
+    h2 { font-size: 23px; margin-bottom: 15px; color: #102a43; }
+    .payment-number { font-size: 21px; font-weight: bold; color: #e2136e; text-align: center; margin: 8px 0; }
+    .referral { background: #fff5e6; border: 1px dashed #e5a33c; padding: 14px; border-radius: 8px; text-align: center; margin-top: 16px; }
+    .referral strong { display: block; font-size: 20px; letter-spacing: 1px; margin: 6px 0; }
+    .copy-btn { background: #f0a52b; color: #222; border: none; padding: 8px 18px; border-radius: 6px; font-weight: bold; cursor: pointer; margin-top: 8px; }
+    label { display: block; font-weight: bold; margin: 15px 0 6px; }
+    input, textarea { display: block; width: 100%; padding: 13px; font-size: 16px; border: 1px solid #cbd2d9; border-radius: 7px; background: white; }
+    textarea { resize: vertical; min-height: 90px; }
+    .payment-option { display: flex; align-items: flex-start; gap: 10px; padding: 13px; margin-top: 10px; border: 1px solid #d5dce3; border-radius: 8px; cursor: pointer; }
+    .payment-option input { width: 19px; height: 19px; margin-top: 3px; flex-shrink: 0; }
+    .payment-option span { font-weight: normal; }
+    .payment-option strong { display: block; }
+    .submit-btn { background: #087443; color: white; margin-top: 22px; }
+    .note { color: #555; font-size: 14px; margin-top: 12px; }
+    footer { background: #102a43; color: white; text-align: center; padding: 22px 12px; font-size: 14px; }
+    @media (max-width: 480px) { header h1 { font-size: 25px; } .card { padding: 17px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>BMARPC BAGS</h1>
+    <p>Quality Bags • Easy Ordering • Convenient Payment</p>
+  </header>
+
+  <main class="container">
+    <section class="card" id="product">
+      <!-- Put your bag photo in the same repository folder and name it bmarpc-bag.png -->
+      <img class="product-image" src="bmarpc-bag.png" alt="BMARPC School Bag"
+        onerror="this.style.display='none'; document.getElementById('imageError').style.display='block';">
+      <div class="image-error" id="imageError">
+        <strong>Bag photo not found.</strong>
+        <p>Check the image filename and its location in your GitHub repository.</p>
+      </div>
+      <h2 class="product-title">BMARPC School Bag</h2>
+      <div class="price">৳600</div>
+      <a class="btn order-btn" href="#order-form">ORDER NOW</a>
+      <a class="btn whatsapp-btn" href="https://wa.me/8801614073205" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
+      <a class="btn call-btn" href="tel:01614073205">Call: 01614073205</a>
+    </section>
+
+    <section class="card" id="payment">
+      <h2>bKash Payment</h2>
+      <p>Send your payment to this bKash number:</p>
+      <div class="payment-number">01714073205</div>
+      <a class="btn bkash-btn" href="https://www.bkash.com/" target="_blank" rel="noopener noreferrer">Open bKash</a>
+      <p class="note">Please pay the amount you selected in the order form. Keep your transaction details for reference.</p>
+      <div class="referral">
+        <p><strong>Required Referral Code</strong></p>
+        <strong id="referralCode">BMARPC-BAGS</strong>
+        <button class="copy-btn" type="button" onclick="copyReferral()">Copy Referral Code</button>
+      </div>
+    </section>
+
+    <section class="card" id="order-form">
+      <h2>Place Your Order</h2>
+      <p>Please complete every required field.</p>
+      <form id="orderForm">
+        <label for="fullName">Full Name *</label>
+        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" autocomplete="name" required>
+
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" autocomplete="tel"
+          pattern="[0-9+\-\s]{10,16}" title="Enter a valid phone number." required>
+
+        <label for="address">Full Delivery Address *</label>
+        <textarea id="address" name="address" placeholder="House, road, area, district and other delivery details"
+          autocomplete="street-address" minlength="5" required></textarea>
+
+        <label>Choose Payment Amount *</label>
+        <label class="payment-option">
+          <input type="radio" name="payment" value="Full Pay - 600 Taka" data-amount="600" required>
+          <span><strong>Full Pay — ৳600</strong>Pay the full price of the bag.</span>
+        </label>
+        <label class="payment-option">
+          <input type="radio" name="payment" value="Half Pay - 300 Taka" data-amount="300" required>
+          <span><strong>Half Pay — ৳300</strong>Pay half of the bag price.</span>
+        </label>
+
+        <button class="btn submit-btn" type="submit">SUBMIT ORDER</button>
+        <p class="note">* All fields are mandatory. Your order details will be prepared in WhatsApp for you to send to the seller.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>BMARPC BAGS</strong></p>
+    <p>WhatsApp / Call: 01614073205</p>
+    <p>bKash: 01714073205</p>
+    <p>Referral Code: BMARPC-BAGS</p>
+    <p style="margin-top:10px;">© 2026 BMARPC Bags</p>
+  </footer>
+
+  <script>
+    function copyReferral() {
+      const code = "BMARPC-BAGS";
+      const button = document.querySelector(".copy-btn");
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(code).then(() => {
+          button.textContent = "Copied!";
+          setTimeout(() => { button.textContent = "Copy Referral Code"; }, 2000);
+        }).catch(() => window.prompt("Copy this referral code:", code));
+      } else {
+        window.prompt("Copy this referral code:", code);
+      }
+    }
+
+    document.getElementById("orderForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      if (!this.checkValidity()) {
+        this.reportValidity();
+        return;
+      }
+
+      const name = document.getElementById("fullName").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const address = document.getElementById("address").value.trim();
+      const payment = this.querySelector('input[name="payment"]:checked');
+
+      if (!name || !phone || !address || !payment) {
+        alert("Please complete all required fields.");
+        return;
+      }
+
+      const amount = payment.dataset.amount;
+      const message =
+        "NEW BMARPC BAGS ORDER\n\n" +
+        "Product: BMARPC School Bag\n" +
+        "Price: 600 Taka\n" +
+        "Customer Name: " + name + "\n" +
+        "Phone Number: " + phone + "\n" +
+        "Delivery Address: " + address + "\n" +
+        "Payment Option: " + payment.value + "\n" +
+        "Selected Payment Amount: " + amount + " Taka\n" +
+        "Referral Code: BMARPC-BAGS";
+
+      const whatsappURL = "https://wa.me/8801614073205?text=" + encodeURIComponent(message);
+      window.open(whatsappURL, "_blank");
+    });
+  </script>
+</body>
+</html>
